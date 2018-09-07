@@ -40,7 +40,7 @@ class Login(unittest.TestCase):
     def userNotExist(self):
         u'''用户不存在测试用例'''
         sleep(1)
-        self.__login('1161709455!', '123456')
+        self.__login('*********', '*********')
         errMsg = self.driver.find_element_by_id('bot_err').text
         self.assertEquals(u'用户名不存在!', errMsg)
 
@@ -48,7 +48,7 @@ class Login(unittest.TestCase):
     def inCorrectUser(self):
         u'''账号密码错误测试用例'''
         sleep(1)
-        self.__login('18959261286', '111111')
+        self.__login('*********', '*********')
         errMsg = self.driver.find_element_by_id('bot_err').text
         self.assertEquals(u'用户名或密码输入有误!', errMsg)
 
@@ -56,11 +56,11 @@ class Login(unittest.TestCase):
     def loginSuccess(self):
         u'''账号密码错误测试用例'''
         sleep(1)
-        self.__login('18959261286', '123456')
+        self.__login('*********', '*********')
         modal = self.driver.execute_script('return document.querySelector(".ant-modal")')
         if modal:
             self.driver.execute_script('document.querySelectorAll(".ant-modal .ant-modal-footer button")[1].click()')
-        sleep(3)
+        sleep(5)
         url = self.driver.current_url
         self.assertEquals(domain + '/#/', url)
 

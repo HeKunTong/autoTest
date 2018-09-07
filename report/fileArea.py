@@ -1,18 +1,16 @@
 import unittest
-from case.login import Login
+from case.fileArea import FileArea
 import HTMLTestRunner
 
-def loginCase(testUnit):
-    testUnit.addTest(Login('inputUserName'))
-    testUnit.addTest(Login('userNotExist'))
-    testUnit.addTest(Login('inCorrectUser'))
-    testUnit.addTest(Login('loginSuccess'))
+def fileAreaCase(testUnit):
+    testUnit.addTest(FileArea('upload'))
+    testUnit.addTest(FileArea('edit'))
 
 if __name__ == "__main__":
     testUnit = unittest.TestSuite()
-    loginCase(testUnit)
+    fileAreaCase(testUnit)
 
-    filename = 'D:\\autoTest\\resources\\report\\login.html'
+    filename = 'D:\\autoTest\\resources\\report\\fileArea.html'
     fp = open(filename, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(
         stream = fp,

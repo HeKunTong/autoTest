@@ -1,18 +1,15 @@
 import unittest
-from case.login import Login
+from case.account import Account
 import HTMLTestRunner
 
-def loginCase(testUnit):
-    testUnit.addTest(Login('inputUserName'))
-    testUnit.addTest(Login('userNotExist'))
-    testUnit.addTest(Login('inCorrectUser'))
-    testUnit.addTest(Login('loginSuccess'))
+def accountCase(testUnit):
+    testUnit.addTest(Account('upload'))
 
 if __name__ == "__main__":
     testUnit = unittest.TestSuite()
-    loginCase(testUnit)
+    accountCase(testUnit)
 
-    filename = 'D:\\autoTest\\resources\\report\\login.html'
+    filename = 'D:\\autoTest\\resources\\report\\account.html'
     fp = open(filename, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(
         stream = fp,
