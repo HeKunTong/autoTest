@@ -25,7 +25,7 @@ class Login:
 
     def loginSuccess(self):
         sleep(1)
-        self.__login('18959261286', '123456')
+        self.__login('*******', '*******')
         modal = self.driver.execute_script('return document.querySelector(".ant-modal")')
         if modal:
             self.driver.execute_script('document.querySelectorAll(".ant-modal .ant-modal-footer button")[1].click()')
